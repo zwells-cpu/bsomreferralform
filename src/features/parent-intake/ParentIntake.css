@@ -1,0 +1,158 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #172b4d;
+  background: #f5f8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f8fc;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.kiosk-panel {
+  width: min(100%, 780px);
+  background: #fff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(4, 28, 63, 0.12);
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 2rem);
+}
+
+.lead {
+  margin: 0.5rem 0 1.25rem;
+  font-size: 1.05rem;
+  color: #3a4d6b;
+}
+
+.btn,
+.input,
+.select,
+.textarea {
+  font: inherit;
+  border-radius: 14px;
+  border: 1px solid #c6d5ea;
+}
+
+.btn {
+  min-height: 52px;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  background: #124bb5;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #124bb5;
+  border: 2px solid #124bb5;
+}
+
+.btn-group {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.language-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #eef4ff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.language-pill button {
+  border: 0;
+  background: transparent;
+  color: #124bb5;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.input,
+.select,
+.textarea {
+  min-height: 50px;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-size: 1rem;
+}
+
+.textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.required {
+  color: #b42318;
+  font-size: 0.83rem;
+}
+
+.error-banner {
+  background: #fff3f2;
+  color: #b42318;
+  border: 1px solid #f3bab5;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .kiosk-panel {
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
