@@ -1,6 +1,47 @@
 export type IntakeLanguage = 'en' | 'es';
 
-export const intakeTranslations = {
+export type IntakeTranslations = {
+  parentIntakeMode: string;
+  parentIntakeDescription: string;
+  launchParentIntake: string;
+  backToPortal: string;
+  welcomeTitle: string;
+  welcomeSubtitle: string;
+  startEnglish: string;
+  startSpanish: string;
+  languageBadge: string;
+  parentIntakeTitle: string;
+  helperText: string;
+  required: string;
+  childFirstName: string;
+  childLastName: string;
+  childDob: string;
+  caregiverName: string;
+  caregiverPhone: string;
+  caregiverEmail: string;
+  preferredOffice: string;
+  preferredLanguage: string;
+  insurance: string;
+  secondaryInsurance: string;
+  autismDiagnosis: string;
+  attendsSchool: string;
+  hasIep: string;
+  referralReason: string;
+  bestContactMethod: string;
+  additionalNotes: string;
+  yes: string;
+  no: string;
+  unknown: string;
+  submit: string;
+  submitting: string;
+  validationRequired: string;
+  successTitle: string;
+  successMessage: string;
+  startNewForm: string;
+  submissionError: string;
+};
+
+export const intakeTranslations: Record<IntakeLanguage, IntakeTranslations> = {
   en: {
     parentIntakeMode: 'Parent Intake Mode',
     parentIntakeDescription:
@@ -91,7 +132,7 @@ export const intakeTranslations = {
     submissionError:
       'No pudimos enviar el formulario en este momento. Pida ayuda en recepción.',
   },
-} as const;
+};
 
 export type IntakeTranslationKey = keyof typeof intakeTranslations.en;
 

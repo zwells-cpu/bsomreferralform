@@ -3,6 +3,7 @@ import {
   intakeTranslations,
   t,
   type IntakeLanguage,
+  type IntakeTranslations,
 } from '../../i18n/parentIntakeTranslations';
 import {
   defaultParentIntakeValues,
@@ -305,7 +306,7 @@ type FormSelectProps = {
   label: string;
   value: YesNoUnknown;
   onChange: (value: YesNoUnknown) => void;
-  labels: typeof intakeTranslations.en;
+  labels: IntakeTranslations;
 };
 
 function FormSelect({
