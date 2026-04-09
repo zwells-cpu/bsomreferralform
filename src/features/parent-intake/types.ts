@@ -60,3 +60,25 @@ export type ParentIntakePayload = ParentIntakeFormValues & {
   needs_review: boolean;
   submitted_language: IntakeLanguage;
 };
+
+export type ParentReferralInsertPayload = {
+  child_first_name: string;
+  child_last_name: string;
+  child_date_of_birth: string;
+  caregiver_full_name: string;
+  caregiver_phone: string;
+  caregiver_email: string;
+  preferred_office: string;
+  preferred_language: string;
+  insurance: string;
+  secondary_insurance: string;
+  autism_diagnosis: YesNoUnknown;
+  attends_school: YesNoUnknown;
+  has_iep: YesNoUnknown;
+  referral_reason: string;
+  best_contact_method: string;
+  referral_source: 'Parent iPad Intake';
+  current_stage: 'New Referral';
+  needs_review: boolean;
+  submitted_language: IntakeLanguage;
+};
