@@ -16,8 +16,37 @@ import './ParentIntake.css';
 
 type ScreenState = 'welcome' | 'form' | 'success';
 
+type SubmissionErrorLike = {
+  code?: string;
+  details?: string;
+  hint?: string;
+  message?: string;
+};
+
 function isFormValid(formValues: ParentIntakeFormValues): boolean {
   return requiredFields.every((field) => formValues[field].trim().length > 0);
+}
+
+function getSubmissionErrorMessage(
+  submissionError: unknown,
+  fallbackMessage: string,
+): string {
+  if (submissionError instanceof Error && submissionError.message.trim().length > 0) {
+    return submissionError.message;
+  }
+
+  if (submissionError && typeof submissionError === 'object') {
+    const { code, details, hint, message } = submissionError as SubmissionErrorLike;
+    const parts = [message, details, hint, code].filter(
+      (part): part is string => typeof part === 'string' && part.trim().length > 0,
+    );
+
+    if (parts.length > 0) {
+      return parts.join(' | ');
+    }
+  }
+
+  return fallbackMessage;
 }
 
 export function ParentIntakePage(): JSX.Element {
@@ -56,10 +85,7 @@ export function ParentIntakePage(): JSX.Element {
       setValues(defaultParentIntakeValues);
       setScreen('success');
     } catch (submissionError) {
-      const message =
-        submissionError instanceof Error && submissionError.message.trim().length > 0
-          ? submissionError.message
-          : t(language, 'submissionError');
+      const message = getSubmissionErrorMessage(submissionError, t(language, 'submissionError'));
       setError(message);
     } finally {
       setIsSubmitting(false);
