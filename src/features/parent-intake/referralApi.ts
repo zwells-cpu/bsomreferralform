@@ -12,7 +12,7 @@ export async function createParentReferral(
   const payload: ParentReferralInsertPayload = {
     child_first_name: values.child_first_name,
     child_last_name: values.child_last_name,
-    child_date_of_birth: values.child_dob,
+    child_dob: values.child_dob,
     caregiver_full_name: values.caregiver_full_name,
     caregiver_phone: values.caregiver_phone,
     caregiver_email: values.caregiver_email,

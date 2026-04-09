@@ -64,7 +64,7 @@ export type ParentIntakePayload = ParentIntakeFormValues & {
 export type ParentReferralInsertPayload = {
   child_first_name: string;
   child_last_name: string;
-  child_date_of_birth: string;
+  child_dob: string;
   caregiver_full_name: string;
   caregiver_phone: string;
   caregiver_email: string;
