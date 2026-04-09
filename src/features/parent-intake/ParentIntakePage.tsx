@@ -243,14 +243,12 @@ export function ParentIntakePage(): JSX.Element {
             />
             <FormInput
               label={labels.bestContactMethod}
-              required
               value={values.best_contact_method}
               onChange={(value) => setField('best_contact_method', value)}
             />
             <FormArea
               className="full"
               label={labels.referralReason}
-              required
               value={values.referral_reason}
               onChange={(value) => setField('referral_reason', value)}
             />

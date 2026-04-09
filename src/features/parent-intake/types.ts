@@ -50,8 +50,6 @@ export const requiredFields: Array<keyof ParentIntakeFormValues> = [
   'preferred_office',
   'preferred_language',
   'insurance',
-  'referral_reason',
-  'best_contact_method',
 ];
 
 export type ParentIntakePayload = ParentIntakeFormValues & {
