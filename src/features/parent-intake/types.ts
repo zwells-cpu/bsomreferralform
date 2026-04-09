@@ -5,7 +5,7 @@ export type YesNoUnknown = 'yes' | 'no' | 'unknown';
 export type ParentIntakeFormValues = {
   child_first_name: string;
   child_last_name: string;
-  child_date_of_birth: string;
+  child_dob: string;
   caregiver_full_name: string;
   caregiver_phone: string;
   caregiver_email: string;
@@ -24,7 +24,7 @@ export type ParentIntakeFormValues = {
 export const defaultParentIntakeValues: ParentIntakeFormValues = {
   child_first_name: '',
   child_last_name: '',
-  child_date_of_birth: '',
+  child_dob: '',
   caregiver_full_name: '',
   caregiver_phone: '',
   caregiver_email: '',
@@ -43,7 +43,7 @@ export const defaultParentIntakeValues: ParentIntakeFormValues = {
 export const requiredFields: Array<keyof ParentIntakeFormValues> = [
   'child_first_name',
   'child_last_name',
-  'child_date_of_birth',
+  'child_dob',
   'caregiver_full_name',
   'caregiver_phone',
   'caregiver_email',

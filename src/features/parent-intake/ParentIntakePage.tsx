@@ -55,8 +55,12 @@ export function ParentIntakePage(): JSX.Element {
       await createParentReferral(values, language);
       setValues(defaultParentIntakeValues);
       setScreen('success');
-    } catch {
-      setError(t(language, 'submissionError'));
+    } catch (submissionError) {
+      const message =
+        submissionError instanceof Error && submissionError.message.trim().length > 0
+          ? submissionError.message
+          : t(language, 'submissionError');
+      setError(message);
     } finally {
       setIsSubmitting(false);
     }
@@ -147,8 +151,8 @@ export function ParentIntakePage(): JSX.Element {
               label={labels.childDob}
               required
               inputType="date"
-              value={values.child_date_of_birth}
-              onChange={(value) => setField('child_date_of_birth', value)}
+              value={values.child_dob}
+              onChange={(value) => setField('child_dob', value)}
             />
             <FormInput
               label={labels.caregiverName}
